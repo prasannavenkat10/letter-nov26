@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>A letter, with lanterns</title>
+<title>For Charu</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600&display=swap">
 <style>
 :root{color-scheme:dark;--night:#140e33;--purple:#352463;--gold:#f6c96b;--cream:#fff3da;--pink:#e993b8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -38,11 +38,11 @@ main{position:relative;z-index:1}
 .env .from{position:absolute;right:7%;bottom:6%;z-index:2;font-size:18px;color:#fff3da;text-shadow:0 1px 2px rgba(0,0,0,.45);pointer-events:none}
 .env.open .paper{transform:translateY(-46%)}
 /* letter */
-.card{max-width:560px;width:100%;background:rgba(255,243,218,.07);border:1px solid rgba(246,201,107,.35);border-radius:18px;padding:28px 24px;backdrop-filter:blur(4px)}
+.card{max-width:560px;width:100%;background:rgba(255,243,218,.07);border:1px solid rgba(246,201,107,.35);border-radius:18px;padding:22px 20px;backdrop-filter:blur(4px)}
 h1,h2{font-weight:600;margin:0 0 .4em}
 h1{font-size:2.4rem;color:var(--gold)}
 h2{font-size:1.55rem;color:var(--gold)}
-.section{max-width:560px;margin:0 auto;padding:44px 22px;text-align:center}
+.section{max-width:560px;margin:0 auto;padding:14px 22px;text-align:center}
 .fade{opacity:0;transform:translateY(18px);transition:all 1s ease}
 .fade.in{opacity:1;transform:none}
 .p{margin:0 0 1em;white-space:pre-line}
@@ -52,7 +52,7 @@ h2{font-size:1.55rem;color:var(--gold)}
 @keyframes bob{50%{transform:translateY(-8px)}}
 .lamp.done{background:linear-gradient(#6f5a86,#4a3a63);box-shadow:none;color:#d8c8ee;animation:none}
 .note{min-height:96px;font-style:italic;font-size:1.25rem;padding:16px;border-radius:14px;background:rgba(0,0,0,.25);transition:opacity .5s}
-.doors{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.doors{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
 .door{width:min(160px,28vw);min-width:130px;padding:34px 10px 18px;border:2px solid var(--gold);border-radius:80px 80px 6px 6px;background:linear-gradient(#4b2f86,#2a1b55);color:var(--cream);font-family:inherit;font-size:1.05rem;cursor:pointer;line-height:1.25;transition:transform .3s,box-shadow .3s}
 .door:hover,.door:focus-visible{transform:translateY(-5px);box-shadow:0 0 24px rgba(246,201,107,.5)}
 .door .ic{display:block;font-size:1.7rem;color:var(--gold);margin-bottom:8px}
@@ -179,7 +179,7 @@ body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:40vh;backgr
 .plc{display:block;color:inherit;text-decoration:none;margin:10px 0 4px}
 .plc img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
 .plgo{display:inline-block;margin-top:14px;font-size:1rem;color:#5a3410;background:linear-gradient(#ffe39a,#f5a93f);padding:8px 20px;border-radius:24px}
-.garea{position:relative;height:340px;border-radius:16px;overflow:hidden;background:linear-gradient(#1b1245,#2c1b63);box-shadow:inset 0 0 40px rgba(0,0,0,.5)}
+.garea{position:relative;height:300px;border-radius:16px;overflow:hidden;background:linear-gradient(#1b1245,#2c1b63);box-shadow:inset 0 0 40px rgba(0,0,0,.5)}
 .garea.static{height:auto;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;padding:26px 12px}
 .garea.static .gl{position:static}
 .gl{position:absolute;width:44px;height:60px;padding:0;border:0;border-radius:45% 45% 35% 35%;background:linear-gradient(#ffe39a,#f5a93f);box-shadow:0 0 18px 6px rgba(255,200,90,.55);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;animation:gsway 3s ease-in-out infinite alternate}
@@ -611,7 +611,7 @@ var LETTER = {
     function setup(){if(ready||!lyr.clientWidth)return;loopW=lc[n].offsetLeft-lc[0].offsetLeft;if(loopW<=0)return;lyr.scrollLeft=loopW;pos=exp=lyr.scrollLeft;ready=true;fx()}
     lyr.addEventListener("scroll",function(){if(ready&&Math.abs(lyr.scrollLeft-exp)>1.5)lastUser=performance.now();qfx()},{passive:true});
     addEventListener("resize",function(){ready=false;qfx()});
-    if("IntersectionObserver" in window)new IntersectionObserver(function(en){vis=en[0].isIntersecting},{threshold:.25}).observe(lyr);else vis=true;
+    if("IntersectionObserver" in window)new IntersectionObserver(function(en){vis=en[0].isIntersecting},{threshold:.05,rootMargin:"0px 0px -6% 0px"}).observe(lyr);else vis=true;
     /* hold = stop, release = run */
     lyr.addEventListener("touchstart",function(){held=true},{passive:true});
     ["touchend","touchcancel"].forEach(function(t){lyr.addEventListener(t,function(){held=false;lastUser=performance.now()},{passive:true})});
@@ -674,7 +674,7 @@ var LETTER = {
   function watch(){
     var els=document.querySelectorAll("#s2 .fade");
     if(!("IntersectionObserver" in window)){els.forEach(function(x){x.classList.add("in")});return}
-    var io=new IntersectionObserver(function(r){r.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.2});
+    var io=new IntersectionObserver(function(r){r.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.05,rootMargin:"0px 0px -6% 0px"});
     els.forEach(function(x){io.observe(x)});
   }
 })();
@@ -869,7 +869,7 @@ var LETTER = {
 })();
 </script>
 <style>
-.nextgo{display:flex;flex-direction:column;align-items:center;gap:2px;margin:26px auto 4px;padding:6px 14px;background:none;border:0;color:#f3d089;font-style:italic;font-size:16px;line-height:1.3;font-family:inherit;letter-spacing:.3px;cursor:pointer;opacity:.9}
+.nextgo{display:flex;flex-direction:column;align-items:center;gap:2px;margin:10px auto 0;padding:6px 14px;background:none;border:0;color:#f3d089;font-style:italic;font-size:16px;line-height:1.3;font-family:inherit;letter-spacing:.3px;cursor:pointer;opacity:.9}
 .nextgo[hidden]{display:none}
 .nextgo svg{width:22px;height:22px;animation:ngb 1.6s ease-in-out infinite}
 @keyframes ngb{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(6px);opacity:1}}
